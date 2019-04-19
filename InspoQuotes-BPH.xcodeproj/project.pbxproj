@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0036BD522269CAFD00B84246 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0036BD512269CAFD00B84246 /* StoreKit.framework */; };
 		AD18A83E21285CAF00F6BF05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18A83D21285CAF00F6BF05 /* AppDelegate.swift */; };
 		AD18A84321285CAF00F6BF05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD18A84121285CAF00F6BF05 /* Main.storyboard */; };
 		AD18A84521285CB000F6BF05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD18A84421285CB000F6BF05 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0036BD512269CAFD00B84246 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD18A83A21285CAF00F6BF05 /* InspoQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspoQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD18A83D21285CAF00F6BF05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD18A84221285CAF00F6BF05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,18 +33,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0036BD522269CAFD00B84246 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0036BD4D2269CAA200B84246 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0036BD4E2269CAB100B84246 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD18A84121285CAF00F6BF05 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0036BD4F2269CAB800B84246 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD18A84F21285D4800F6BF05 /* QuoteTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0036BD502269CAFD00B84246 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0036BD512269CAFD00B84246 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AD18A83121285CAF00F6BF05 = {
 			isa = PBXGroup;
 			children = (
 				AD18A8512128604B00F6BF05 /* README.md */,
 				AD18A83C21285CAF00F6BF05 /* InspoQuotes-BPH */,
 				AD18A83B21285CAF00F6BF05 /* Products */,
+				0036BD502269CAFD00B84246 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				AD18A83D21285CAF00F6BF05 /* AppDelegate.swift */,
-				AD18A84F21285D4800F6BF05 /* QuoteTableViewController.swift */,
-				AD18A84121285CAF00F6BF05 /* Main.storyboard */,
-				AD18A84421285CB000F6BF05 /* Assets.xcassets */,
-				AD18A84621285CB000F6BF05 /* LaunchScreen.storyboard */,
+				0036BD4F2269CAB800B84246 /* Controllers */,
+				0036BD4D2269CAA200B84246 /* Models */,
+				0036BD4E2269CAB100B84246 /* Views */,
 				AD18A8552128605C00F6BF05 /* Supporting Files */,
 				AD18A84921285CB000F6BF05 /* Info.plist */,
 			);
@@ -71,6 +105,8 @@
 		AD18A8552128605C00F6BF05 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD18A84421285CB000F6BF05 /* Assets.xcassets */,
+				AD18A84621285CB000F6BF05 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -107,6 +143,12 @@
 				TargetAttributes = {
 					AD18A83921285CAF00F6BF05 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -303,7 +345,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HumbeekWave.InspoQuotes-BPH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -321,7 +363,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HumbeekWave.InspoQuotes-BPH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
